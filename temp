@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+
+class animal
+{
+private:
+	string name;
+	int age;
+	string place;
+public:
+	void set_name(string namee)
+	{
+		name = namee;
+	}
+	void set_age(int agee)
+	{
+		age = agee;
+	}
+	void set_place(string placee)
+	{
+		place = placee;
+	}
+	string get_name()
+	{
+		return name;
+	}
+	int get_age()
+	{
+		return age;
+	}
+	string get_place()
+	{
+		return place;
+	}
+	virtual void Sound()
+	{
+		cout << "Animal Sound";
+	}
+};
+
+class Dolphin : public animal
+{
+public:
+	virtual void Sound()
+	{
+		cout << "Dolphine sound";
+	}
+};
+class Zebra : public animal
+{
+public:
+	virtual void Sound()
+	{
+		cout << "Zebra sound";
+	}
+};
+
+int main()
+{
+	animal a;
+	a.set_age(2);
+	a.set_name("koko");
+	a.set_place("Egypt");
+	a.Sound();
+
+	Dolphin d;
+	d.set_age(3);
+	d.set_name("kono");
+	d.set_place("Paris");
+	d.Sound();
+
+	Zebra z;
+	z.set_age(4);
+	z.set_name("lopl");
+	z.set_place("London");
+	z.Sound();
+}
